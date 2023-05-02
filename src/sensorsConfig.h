@@ -7,7 +7,7 @@
 #define SENSORS_CONFIG_H
 
 // This defines the number of temperature sensors
-#define SENSORS_QTY 1
+#define SENSORS_QTY 5
 
 // This defines the number of analog samples necessary to measure the temperature
 #define OVERSAMPLENR 16
@@ -48,9 +48,9 @@
 // 999 : User-defined table 2 / Dummy Thermistor table 2.
 
 #define TYPE_TEMP_SENSOR_1 1
-#define TYPE_TEMP_SENSOR_2 0
-#define TYPE_TEMP_SENSOR_3 0
-#define TYPE_TEMP_SENSOR_4 0
-#define TYPE_TEMP_SENSOR_5 0
+#define TYPE_TEMP_SENSOR_2 2
+#define TYPE_TEMP_SENSOR_3 3
+#define TYPE_TEMP_SENSOR_4 998
+#define TYPE_TEMP_SENSOR_5 999
 
 #endif // SENSORS_CONFIG_H

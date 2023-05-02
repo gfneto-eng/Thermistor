@@ -22,7 +22,7 @@
 
 // R25 = 100 kOhm, beta25 = 4120 K, 4.7 kOhm pull-up, mendel-parts
 const short temptable_3[][2] PROGMEM = {
-  { OV(   1), 864 },
+  { OV(   0), 864 },//{ OV(   1), 864 },
   { OV(  21), 300 },
   { OV(  25), 290 },
   { OV(  29), 280 },

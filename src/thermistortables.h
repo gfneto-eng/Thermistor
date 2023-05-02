@@ -42,7 +42,7 @@
 #if TYPE_TEMP_SENSOR_1 <0 
     #error "Sensor 1 - Table of temperature sensor not supported."
 #elif TYPE_TEMP_SENSOR_1 == 0
-    #define SENSOR_1_THERMISTOR_NOT_DEFINED
+  #define SENSOR_1_NULL_TYPE
 #elif TYPE_TEMP_SENSOR_1 > 0
   #define THERMISTOR_SENSOR_1 TYPE_TEMP_SENSOR_1
 #endif
@@ -50,7 +50,7 @@
 #if TYPE_TEMP_SENSOR_2 <0 
     #error "Sensor 2 - Table of temperature sensor not supported."
 #elif TYPE_TEMP_SENSOR_2 == 0
-    #define SENSOR_2_THERMISTOR_NOT_DEFINED
+  #define SENSOR_2_NULL_TYPE    
 #elif TYPE_TEMP_SENSOR_2 > 0
   #define THERMISTOR_SENSOR_2 TYPE_TEMP_SENSOR_2
 #endif
@@ -58,7 +58,7 @@
 #if TYPE_TEMP_SENSOR_3 <0 
     #error "Sensor 3 - Table of temperature sensor not supported."
 #elif TYPE_TEMP_SENSOR_3 == 0
-    #define SENSOR_3_THERMISTOR_NOT_DEFINED
+  #define SENSOR_3_NULL_TYPE  
 #elif TYPE_TEMP_SENSOR_3 > 0
   #define THERMISTOR_SENSOR_3 TYPE_TEMP_SENSOR_3
 #endif
@@ -66,7 +66,7 @@
 #if TYPE_TEMP_SENSOR_4 <0 
     #error "Sensor 4 - Table of temperature sensor not supported."
 #elif TYPE_TEMP_SENSOR_4 == 0
-    #define SENSOR_4_THERMISTOR_NOT_DEFINED
+  #define SENSOR_4_NULL_TYPE    
 #elif TYPE_TEMP_SENSOR_4 > 0
   #define THERMISTOR_SENSOR_4 TYPE_TEMP_SENSOR_4
 #endif
@@ -74,9 +74,9 @@
 #if TYPE_TEMP_SENSOR_5 <0 
     #error "Sensor 5 - Table of temperature sensor not supported."
 #elif TYPE_TEMP_SENSOR_5 == 0
-    #define SENSOR_5_THERMISTOR_NOT_DEFINED
+  #define SENSOR_5_NULL_TYPE
 #elif TYPE_TEMP_SENSOR_5 > 0
-  #define THERMISTOR_SENSOR_5 TEMP_SENSOR_5
+  #define THERMISTOR_SENSOR_5 TYPE_TEMP_SENSOR_5
 #endif
 
 //=======================================================================================
@@ -178,51 +178,41 @@
 //=======================================================================================
 //Link thermistor tables to sensors
 //=======================================================================================
-#if THERMISTOR_SENSOR_1
+#ifdef THERMISTOR_SENSOR_1
   #define SENSOR_1_TEMPTABLE TT_NAME(THERMISTOR_SENSOR_1)
   #define SENSOR_1_TEMPTABLE_LEN COUNT(SENSOR_1_TEMPTABLE)
-#elif defined(SENSOR_1_THERMISTOR_NOT_DEFINED)
-  #error "Sensor 1 - Table of thermistor not specified."
 #else
   #define SENSOR_1_TEMPTABLE NULL
   #define SENSOR_1_TEMPTABLE_LEN 0
 #endif
 
-#if THERMISTOR_SENSOR_2
+#ifdef THERMISTOR_SENSOR_2
   #define SENSOR_2_TEMPTABLE TT_NAME(THERMISTOR_SENSOR_2)
   #define SENSOR_2_TEMPTABLE_LEN COUNT(SENSOR_2_TEMPTABLE)
-#elif defined(SENSOR_2_THERMISTOR_NOT_DEFINED)
-  #error "Sensor 2 - Table of thermistor not specified."
 #else
   #define SENSOR_2_TEMPTABLE NULL
   #define SENSOR_2_TEMPTABLE_LEN 0
 #endif
 
-#if THERMISTOR_SENSOR_3
+#ifdef THERMISTOR_SENSOR_3
   #define SENSOR_3_TEMPTABLE TT_NAME(THERMISTOR_SENSOR_3)
   #define SENSOR_3_TEMPTABLE_LEN COUNT(SENSOR_3_TEMPTABLE)
-#elif defined(SENSOR_3_THERMISTOR_NOT_DEFINED)
-  #error "Sensor 3 - Table of thermistor not specified."
 #else
   #define SENSOR_3_TEMPTABLE NULL
   #define SENSOR_3_TEMPTABLE_LEN 0
 #endif
 
-#if THERMISTOR_SENSOR_4
+#ifdef THERMISTOR_SENSOR_4
   #define SENSOR_4_TEMPTABLE TT_NAME(THERMISTOR_SENSOR_4)
   #define SENSOR_4_TEMPTABLE_LEN COUNT(SENSOR_4_TEMPTABLE)
-#elif defined(SENSOR_4_THERMISTOR_NOT_DEFINED)
-  #error "Sensor 4 - Table of thermistor not specified."
 #else
   #define SENSOR_4_TEMPTABLE NULL
   #define SENSOR_4_TEMPTABLE_LEN 0
 #endif
 
-#if THERMISTOR_SENSOR_5
+#ifdef THERMISTOR_SENSOR_5
   #define SENSOR_5_TEMPTABLE TT_NAME(THERMISTOR_SENSOR_5)
   #define SENSOR_5_TEMPTABLE_LEN COUNT(SENSOR_5_TEMPTABLE)
-#elif defined(SENSOR_5_THERMISTOR_NOT_DEFINED)
-  #error "Sensor 5 - Table of thermistor not specified."
 #else
   #define SENSOR_5_TEMPTABLE NULL
   #define SENSOR_5_TEMPTABLE_LEN 0
